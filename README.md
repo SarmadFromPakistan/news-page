@@ -2,6 +2,6 @@
 
 ## WEB Assignment 01
 
-<br>
+page link : https://sarmadfrompakistan.github.io/news-page/
 
 ![](display_gif.gif)
