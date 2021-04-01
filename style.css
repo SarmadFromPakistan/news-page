@@ -5,40 +5,10 @@
     font-family: 'Nunito Sans', sans-serif;
 }
 
-figure {
-    float: right;
-    margin-top: 10px;
-    margin-left: 10px;
-}
 
-footer {
-    text-align: center;
-}
-
-p {
-    margin: 12px 0px;
-}
-
-article p {
-    padding-right: 10px;
-}
-
-hr {
-    border: 1px solid black;
-}
-
-aside {
-    float: right;
-    width: 9.8%;
-    border: 2px solid black;
-    background-color: rgb(0, 242, 255);
-    list-style-position: inside;
-    padding: 10px;
-    position: fixed;
-    margin-left: 1px;
-    top: 0;
-    right: 0;
-}
+/*===========
+Global Styles
+===========*/
 
 h1 {
     font-family: 'Nunito Sans', sans-serif;
@@ -46,66 +16,24 @@ h1 {
 
 article h1 {
     padding: 0px 1px;
-    font-size: 1.4em;
     display: inline;
     background-color: green;
     color: white;
+    letter-spacing: 1.1px;
 }
 
-header h1 {
+.middle-column-header {
     padding: 15px 0px;
     text-align: center;
     font-weight: 900;
-    font-size: 1.5em;
-    font-style: normal;
 }
 
-.news a {
-    font-size: smaller;
+hr {
+    border: 1px solid black;
 }
 
-.news article {
-    padding: 12px;
-    margin: 0px 10px;
-    border: 2px solid rgb(252, 252, 84);
-    background-color: rgb(255, 248, 214);
-}
-
-.news {
-    width: 15%;
-}
-
-.news::after {
-    clear: both;
-    content: "";
-    display: table;
-}
-
-.middle-col article::after {
-    clear: both;
-    content: "";
-    display: table;
-}
-
-.middle-col {
-    float: right;
-    width: 85%;
-}
-
-.middle-col header {
-    font-size: 1.6em;
-}
-
-.main {
-    background-color: rgb(199, 252, 240);
-    width: 90%;
-    border: 2px solid black;
-    margin: 1px;
-}
-
-.events {
-    background-color: white;
-    margin: 5px 5px 5px 15%;
+.middle-column p {
+    margin: 12px 0px;
 }
 
 a:hover {
@@ -114,4 +42,431 @@ a:hover {
 
 a:active {
     color: blue;
+}
+
+footer {
+    text-align: center;
+    margin: 5px 0px;
+}
+
+span::before {
+    top: -6px;
+}
+
+span::after {
+    top: 6px;
+}
+
+
+/*=================
+News Section Styles
+=================*/
+
+.news-articles a {
+    font-size: smaller;
+}
+
+.news-articles article {
+    padding: 12px;
+    margin: 0px 10px;
+    border: 2px solid rgb(252, 252, 84);
+    background-color: rgb(255, 248, 214);
+}
+
+#news-check {
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.news-toggle-btn {
+    height: 25px;
+    width: 33px;
+    background-color: #ffffff;
+    border-radius: 4px;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.news-toggle-btn span {
+    width: 20px;
+    height: 2px;
+    background-color: black;
+    position: relative;
+}
+
+.news-toggle-btn span::after,
+.news-toggle-btn span::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    position: absolute;
+    left: 0;
+}
+
+.news-articles {
+    display: none;
+}
+
+
+/*===================
+Events Section Styles
+===================*/
+
+#events-check {
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.events-toggle-btn {
+    height: 25px;
+    width: 33px;
+    background-color: #ffffff;
+    border-radius: 4px;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.events-toggle-btn span {
+    width: 20px;
+    height: 2px;
+    background-color: black;
+    position: relative;
+}
+
+.events-toggle-btn span::after,
+.events-toggle-btn span::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    position: absolute;
+    left: 0;
+}
+
+.events-menu {
+    display: none;
+}
+
+@media screen and (min-width:1290px) {
+    .main {
+        background-color: rgb(199, 252, 240);
+        width: 90%;
+        border: 2px solid black;
+        margin: 1px;
+        display: flex;
+    }
+    /*===================
+     Middle Column Styles
+     ==================*/
+    .middle-column {
+        width: 85%;
+    }
+    .middle-column-header {
+        font-size: 1.5rem;
+    }
+    article h1 {
+        font-size: 1.2rem;
+    }
+    article p {
+        padding-right: 10px;
+    }
+    figure {
+        float: right;
+        margin-top: 10px;
+        margin-left: 10px;
+    }
+    .middle-column article::after {
+        clear: both;
+        content: "";
+        display: table;
+    }
+    /*===================
+     Events Section Styles
+     ===================*/
+    .events-section {
+        width: 9.8%;
+        border: 2px solid black;
+        background-color: rgb(0, 242, 255);
+        list-style-position: inside;
+        padding: 10px;
+        position: fixed;
+        top: 0;
+        right: 0;
+    }
+    .events-section h1 {
+        font-size: 1.4rem;
+        letter-spacing: 1.1px;
+        text-align: center;
+    }
+    .events-menu li {
+        padding: 4px 0px;
+    }
+    .events-menu {
+        display: block;
+    }
+    /*==================
+     News Section Styles
+     =================*/
+    .news-section {
+        width: 15%;
+    }
+    .news-section h1 {
+        font-size: 1.4rem;
+        letter-spacing: 1.1px;
+        text-align: center;
+    }
+    .news-articles {
+        display: block;
+    }
+}
+
+@media screen and (max-width:1289px) and (min-width:700px) {
+    .main {
+        background-color: rgb(199, 252, 240);
+        width: 100%;
+        border: 2px solid black;
+        margin: 38px 0px 0px 0px;
+        display: flex;
+    }
+    /*===================
+     Middle Column Styles
+     ==================*/
+    .middle-column {
+        width: 80%;
+        padding-right: 15px;
+    }
+    .middle-column-header {
+        font-size: 1.4rem;
+    }
+    article h1 {
+        font-size: 1.3rem;
+    }
+    figure {
+        float: right;
+        margin-top: 10px;
+        margin-left: 10px;
+    }
+    .middle-column article::after {
+        clear: both;
+        content: "";
+        display: table;
+    }
+    /*===================
+     Events Section Styles
+     ===================*/
+    .events-section {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        margin: 31px 1px 0px 1px;
+        border: 2px solid black;
+        background-color: rgb(0, 242, 255);
+        list-style-position: inside;
+    }
+    .events-section h1 {
+        font-size: 1.2rem;
+        letter-spacing: 1.1px;
+    }
+    .events-nav {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: inherit;
+        border: 2px solid black;
+        background-color: rgb(0, 242, 255);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 15px;
+    }
+    .events-menu li {
+        padding: 4px 0px;
+    }
+    #events-check:checked~.events-section .events-menu {
+        display: flex;
+        flex-direction: column;
+        padding-left: 20px;
+    }
+    #events-check:checked~.events-section {
+        overflow: scroll;
+        padding-top: 15px;
+        height: 60%;
+    }
+    #events-check:checked~.events-section .events-toggle-btn span {
+        background-color: transparent;
+    }
+    #events-check:checked~.events-section .events-toggle-btn span::before {
+        top: 0;
+        transform: rotate(45deg);
+    }
+    #events-check:checked~.events-section .events-toggle-btn span::after {
+        top: 0;
+        transform: rotate(-45deg);
+    }
+    .events-toggle-btn {
+        display: flex;
+    }
+    /*==================
+     News Section Styles
+     =================*/
+    .news-section {
+        width: 20%;
+    }
+    .news-section h1 {
+        font-size: 1.2rem;
+        letter-spacing: 1.1px;
+        text-align: center;
+    }
+    .news-articles {
+        display: block;
+    }
+}
+
+@media screen and (max-width:699px) {
+    .main {
+        background-color: rgb(199, 252, 240);
+        border: 2px solid black;
+        margin: 30px 1px 0px 1px;
+    }
+    /*===================
+     Middle Column Styles
+     ==================*/
+    .middle-column {
+        width: 100%;
+        padding: 0px 15px;
+    }
+    .middle-column-header {
+        font-size: 1.3rem;
+    }
+    article h1 {
+        font-size: 1.2rem;
+    }
+    figure {
+        float: right;
+        margin-top: 10px;
+        margin-left: 10px;
+    }
+    .middle-column article::after {
+        clear: both;
+        content: "";
+        display: table;
+    }
+    /*===================
+     Events Section Styles
+     ===================*/
+    .events-section {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 50%;
+        margin: 31px 1px 0px 1px;
+        border: 2px solid black;
+        background-color: rgb(0, 242, 255);
+        list-style-position: inside;
+    }
+    .events-section h1 {
+        font-size: 1.1rem;
+        letter-spacing: 1.1px;
+    }
+    .events-nav {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: inherit;
+        margin: 0px 1px;
+        border: 2px solid black;
+        background-color: rgb(0, 242, 255);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 15px;
+    }
+    .events-menu li {
+        padding: 4px 0px;
+    }
+    #events-check:checked~.events-section .events-menu {
+        display: flex;
+        flex-direction: column;
+        padding-left: 20px;
+    }
+    #events-check:checked~.events-section {
+        overflow: scroll;
+        padding-top: 15px;
+        height: 60%;
+    }
+    #events-check:checked~.events-section .events-toggle-btn span {
+        background-color: transparent;
+    }
+    #events-check:checked~.events-section .events-toggle-btn span::before {
+        top: 0;
+        transform: rotate(45deg);
+    }
+    #events-check:checked~.events-section .events-toggle-btn span::after {
+        top: 0;
+        transform: rotate(-45deg);
+    }
+    .events-toggle-btn {
+        display: flex;
+    }
+    /*==================
+     News Section Styles
+     =================*/
+    .news-section {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 50%;
+        margin: 31px 1px 0px 1px;
+        border: 2px solid black;
+        background-color: rgb(255, 248, 214);
+    }
+    .news-section h1 {
+        font-size: 1.1rem;
+        letter-spacing: 1.1px;
+    }
+    .news-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: inherit;
+        margin: 0px 1px;
+        border: 2px solid black;
+        background-color: rgb(253, 235, 145);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 15px;
+    }
+    #news-check:checked~.news-section .news-articles {
+        display: block;
+    }
+    #news-check:checked~.news-section {
+        overflow: scroll;
+        padding-top: 15px;
+        height: 60%;
+    }
+    #news-check:checked~.news-section .news-toggle-btn span {
+        background-color: transparent;
+    }
+    #news-check:checked~.news-section .news-toggle-btn span::before {
+        top: 0;
+        transform: rotate(45deg);
+    }
+    #news-check:checked~.news-section .news-toggle-btn span::after {
+        top: 0;
+        transform: rotate(-45deg);
+    }
+    .news-toggle-btn {
+        display: flex;
+    }
 }
