@@ -24,9 +24,18 @@ article h1 {
 }
 
 .middle-column-header {
+    letter-spacing: 1.5px;
     padding: 15px 0px;
     text-align: center;
     font-weight: 900;
+    animation-name: middle-column-header-animation;
+    animation-duration: 1s;
+}
+
+@keyframes middle-column-header-animation {
+    0% {
+        transform: translate(0px, -15px);
+    }
 }
 
 hr {
@@ -57,60 +66,6 @@ span::before {
 
 span::after {
     top: 6px;
-}
-
-
-/*=================
-News Section Styles
-=================*/
-
-.news-articles a {
-    font-size: smaller;
-}
-
-.news-articles article {
-    padding: 12px;
-    /* border: 2px solid rgb(252, 252, 84); */
-    background-color: rgb(255, 248, 214);
-}
-
-#news-check {
-    position: absolute;
-    top: 0;
-    opacity: 0;
-    pointer-events: none;
-}
-
-.news-toggle-btn {
-    height: 25px;
-    width: 33px;
-    background-color: #ffffff;
-    border-radius: 4px;
-    cursor: pointer;
-    display: none;
-    align-items: center;
-    justify-content: center;
-}
-
-.news-toggle-btn span {
-    width: 20px;
-    height: 2px;
-    background-color: black;
-    position: relative;
-}
-
-.news-toggle-btn span::after,
-.news-toggle-btn span::before {
-    content: "";
-    width: 100%;
-    height: 100%;
-    background-color: black;
-    position: absolute;
-    left: 0;
-}
-
-.news-articles {
-    display: none;
 }
 
 
@@ -157,12 +112,192 @@ Events Section Styles
     display: none;
 }
 
+
+/*====================================================
+Styles Applied AFTER the CLICK of EVENTS TOGGLE BUTTON
+====================================================*/
+
+#events-check:checked~.events-section .events-toggle-btn {
+    background-color: rgb(0, 242, 255);
+}
+
+#events-check:checked~.events-section .events-toggle-btn span {
+    background-color: transparent;
+}
+
+#events-check:checked~.events-section .events-toggle-btn span::before {
+    top: 0;
+    transform: rotate(45deg);
+}
+
+#events-check:checked~.events-section .events-toggle-btn span::after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+#events-check:checked~.events-section .events-menu {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+}
+
+#events-check:checked~.events-section .events-nav {
+    background-color: #ffffff;
+    border: 1px solid rgb(0, 242, 255);
+}
+
+#events-check:checked~.events-section {
+    overflow: scroll;
+    padding-top: 15px;
+    height: 55%;
+    animation-name: events-btn-animation;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+}
+
+@keyframes events-btn-animation {
+    0% {
+        height: 0%;
+    }
+}
+
+#events-check:checked~.events-section .events-nav header h1 {
+    animation-name: events-header-animation;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes events-header-animation {
+    100% {
+        letter-spacing: 3.1px;
+    }
+}
+
+
+/*=================
+News Section Styles
+=================*/
+
+.news-articles a {
+    font-size: smaller;
+}
+
+.news-articles article {
+    padding: 12px;
+    background-color: rgb(255, 248, 214);
+}
+
+#news-check {
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.news-toggle-btn {
+    height: 25px;
+    width: 33px;
+    background-color: #ffffff;
+    border-radius: 4px;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.news-toggle-btn span {
+    width: 20px;
+    height: 2px;
+    background-color: black;
+    position: relative;
+}
+
+.news-toggle-btn span::after,
+.news-toggle-btn span::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    position: absolute;
+    left: 0;
+}
+
+.news-articles {
+    display: none;
+}
+
+
+/*==================================================
+Styles Applied AFTER the CLICK of NEWS TOGGLE BUTTON
+==================================================*/
+
+#news-check:checked~.news-section .news-toggle-btn {
+    background-color: rgb(253, 235, 145);
+}
+
+#news-check:checked~.news-section .news-toggle-btn span {
+    background-color: transparent;
+}
+
+#news-check:checked~.news-section .news-toggle-btn span::before {
+    top: 0;
+    transform: rotate(45deg);
+}
+
+#news-check:checked~.news-section .news-toggle-btn span::after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+#news-check:checked~.news-section .news-articles {
+    margin: 5px 10px;
+    border-radius: 5px;
+    border: 2px solid rgb(248, 248, 145);
+    display: block;
+}
+
+#news-check:checked~.news-section .news-nav {
+    background-color: #ffffff;
+    border: 1px solid rgb(253, 235, 145);
+}
+
+#news-check:checked~.news-section {
+    overflow: scroll;
+    padding-top: 15px;
+    height: 55%;
+    animation-name: news-btn-animation;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+}
+
+@keyframes news-btn-animation {
+    0% {
+        height: 0%;
+    }
+}
+
+#news-check:checked~.news-section .news-nav header h1 {
+    animation-name: news-header-animation;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes news-header-animation {
+    100% {
+        letter-spacing: 3.1px;
+    }
+}
+
+
+/*======================= 
+Styles for DESKTOP Screen
+=======================*/
+
 @media screen and (min-width:1290px) {
     .main {
         border-radius: 5px;
         background-color: rgb(199, 252, 240);
         width: 90%;
-        /* border: 2px solid rgb(0, 242, 255); */
         margin: 1px;
         display: flex;
     }
@@ -236,11 +371,15 @@ Events Section Styles
     }
 }
 
+
+/*======================
+Styles for TABLET Screen
+======================*/
+
 @media screen and (max-width:1289px) and (min-width:700px) {
     .main {
         background-color: rgb(199, 252, 240);
         width: 100%;
-        /* border: 2px solid black; */
         margin: 30px 0px 0px 0px;
         display: flex;
     }
@@ -276,8 +415,7 @@ Events Section Styles
         top: 0;
         right: 0;
         width: 100%;
-        margin: 31px 1px 0px 1px;
-        /* border: 2px solid rgb(199, 252, 240); */
+        margin: 19px 1px 0px 1px;
         background-color: rgb(0, 242, 255);
         list-style-position: inside;
     }
@@ -291,7 +429,6 @@ Events Section Styles
         right: 0;
         width: inherit;
         border-radius: 0px 0px 8px 8px;
-        /* border: 2px solid rgb(199, 252, 240); */
         background-color: rgb(0, 242, 255);
         display: flex;
         justify-content: space-between;
@@ -300,27 +437,6 @@ Events Section Styles
     }
     .events-menu li {
         padding: 4px 0px;
-    }
-    #events-check:checked~.events-section .events-menu {
-        display: flex;
-        flex-direction: column;
-        padding-left: 20px;
-    }
-    #events-check:checked~.events-section {
-        overflow: scroll;
-        padding-top: 15px;
-        height: 60%;
-    }
-    #events-check:checked~.events-section .events-toggle-btn span {
-        background-color: transparent;
-    }
-    #events-check:checked~.events-section .events-toggle-btn span::before {
-        top: 0;
-        transform: rotate(45deg);
-    }
-    #events-check:checked~.events-section .events-toggle-btn span::after {
-        top: 0;
-        transform: rotate(-45deg);
     }
     .events-toggle-btn {
         display: flex;
@@ -345,10 +461,14 @@ Events Section Styles
     }
 }
 
+
+/*====================== 
+Styles for MOBILE Screen
+======================*/
+
 @media screen and (max-width:699px) {
     .main {
         background-color: rgb(199, 252, 240);
-        /* border: 2px solid black; */
         margin: 20px 1px 0px 1px;
     }
     /*===================
@@ -383,8 +503,7 @@ Events Section Styles
         top: 0;
         right: 0;
         width: 50%;
-        margin: 31px 1px 0px 1px;
-        /* border: 2px solid black; */
+        margin: 19px 0px 0px 0px;
         background-color: rgb(0, 242, 255);
         list-style-position: inside;
     }
@@ -397,9 +516,7 @@ Events Section Styles
         top: 0;
         right: 0;
         width: inherit;
-        margin: 0px 1px;
         border-radius: 0px 0px 15px 0px;
-        /* border: 2px solid black; */
         background-color: rgb(0, 242, 255);
         display: flex;
         justify-content: space-between;
@@ -408,27 +525,6 @@ Events Section Styles
     }
     .events-menu li {
         padding: 4px 0px;
-    }
-    #events-check:checked~.events-section .events-menu {
-        display: flex;
-        flex-direction: column;
-        padding-left: 20px;
-    }
-    #events-check:checked~.events-section {
-        overflow: scroll;
-        padding-top: 15px;
-        height: 60%;
-    }
-    #events-check:checked~.events-section .events-toggle-btn span {
-        background-color: transparent;
-    }
-    #events-check:checked~.events-section .events-toggle-btn span::before {
-        top: 0;
-        transform: rotate(45deg);
-    }
-    #events-check:checked~.events-section .events-toggle-btn span::after {
-        top: 0;
-        transform: rotate(-45deg);
     }
     .events-toggle-btn {
         display: flex;
@@ -441,8 +537,7 @@ Events Section Styles
         top: 0;
         left: 0;
         width: 50%;
-        margin: 31px 1px 0px 1px;
-        /* border: 2px solid black; */
+        margin: 19px 0px 0px 0px;
         background-color: rgb(255, 248, 214);
     }
     .news-section h1 {
@@ -454,36 +549,12 @@ Events Section Styles
         top: 0;
         left: 0;
         width: inherit;
-        margin: 0px 1px;
         border-radius: 0px 0px 0px 15px;
-        /* border: 2px solid black; */
         background-color: rgb(253, 235, 145);
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 5px 15px;
-    }
-    #news-check:checked~.news-section .news-articles {
-        margin: 0px 10px;
-        border-radius: 5px;
-        border: 2px solid rgb(248, 248, 145);
-        display: block;
-    }
-    #news-check:checked~.news-section {
-        overflow: scroll;
-        padding-top: 15px;
-        height: 60%;
-    }
-    #news-check:checked~.news-section .news-toggle-btn span {
-        background-color: transparent;
-    }
-    #news-check:checked~.news-section .news-toggle-btn span::before {
-        top: 0;
-        transform: rotate(45deg);
-    }
-    #news-check:checked~.news-section .news-toggle-btn span::after {
-        top: 0;
-        transform: rotate(-45deg);
     }
     .news-toggle-btn {
         display: flex;
