@@ -4,4 +4,4 @@
 
 page link : https://sarmadfrompakistan.github.io/news-page/
 
-![](display_gif.gif)
+![](extras/display_gif.gif)
